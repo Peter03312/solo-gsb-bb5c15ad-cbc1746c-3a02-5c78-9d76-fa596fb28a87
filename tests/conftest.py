@@ -22,6 +22,9 @@ def _clean_tables():
         conn.execute("DELETE FROM zone_windows")
         conn.execute("DELETE FROM zones")
         conn.execute("DELETE FROM points")
+        conn.execute("DELETE FROM zone_revisions")
+        conn.execute("DELETE FROM revision_meta")
+        conn.execute("INSERT INTO revision_meta(id, head) VALUES (1, 0)")
     yield
 
 
